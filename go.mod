@@ -1,4 +1,4 @@
-module github.com/mastercactapus/proxyprotocol
+module github.com/InkerBot/proxyprotocol
 
 go 1.13
 
