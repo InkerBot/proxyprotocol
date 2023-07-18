@@ -82,11 +82,11 @@ func parseV1(r *bufio.Reader) (*HeaderV1, error) {
 
 	srcIP := net.ParseIP(srcIPStr)
 	if !validAddr(srcIP) {
-		return nil, &InvalidHeaderErr{Read: buf, error: errors.New("invalid source address")}
+		return nil, &InvalidHeaderErr{Read: buf, error: errors.New("invalid source address: " + srcIPStr)}
 	}
 	dstIP := net.ParseIP(dstIPStr)
 	if !validAddr(dstIP) {
-		return nil, &InvalidHeaderErr{Read: buf, error: errors.New("invalid destination address")}
+		return nil, &InvalidHeaderErr{Read: buf, error: errors.New("invalid destination address: +" + dstIPStr)}
 	}
 
 	return &HeaderV1{
